@@ -22,4 +22,12 @@ class MinMaxUnit( Model ):
     # logic here to implement the min/max unit. You should also write a
     # unit test from scratch named MinMaxUnit_test.py.
     # ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+    @s.combinational
+    def Block():
+      if s.in0 <= s.in1:
+        s.out_min.value = s.in0
+        s.out_max.value = s.in1
+      else:
+        s.out_min.value = s.in1
+        s.out_max.value = s.in0
 
